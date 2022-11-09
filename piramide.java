@@ -1,8 +1,4 @@
-import java.beans.EventSetDescriptor;
 import java.util.Scanner;
-
-import javax.lang.model.util.ElementScanner6;
-
 public class piramide {
     public static void main(String[] args) {
         /*     +
@@ -11,18 +7,26 @@ public class piramide {
          *  +++++++
          */
         Scanner sc = new Scanner(System.in);
-        System.out.println("Dime la altura de la piramide: ");
-//        int altura = sc.nextInt();
-        int altura = 4;
+        System.out.print("Dime la altura de la piramide: ");
+        int altura = sc.nextInt();
+
+        int ancho = 1;
+        int espacio = altura-1;
 
         for (int i = 1; i <= altura; i++) {
+            System.out.println();
 
-            for (int j = 1; j <= altura; j++) {
-                System.out.print("*");
+            for (int j = espacio; j > 0; j-=1) {
+                System.out.print(" ");
             }
 
-            System.out.println("");
-        
+
+            for (int j = 1; j <= ancho; j++) {
+                System.out.print("*");
+            }
+            ancho = ancho + 2;
+            espacio = espacio - 1;
         }
+        System.out.println("");
     }
 }
