@@ -14,6 +14,8 @@ public class ejercicio19 {
         System.out.print("Dime un caracter");
         sc.nextLine();
         String caracter = sc.nextLine();
+        sc.close();
+
         int ancho = 1;
         int espacio = altura-1;        
         for (int i = 1; i <= altura; i++) {    
