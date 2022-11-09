@@ -16,6 +16,7 @@ public class piramide {
         for (int i = 1; i <= altura; i++) {
             System.out.println();
 
+            
             for (int j = espacio; j > 0; j-=1) {
                 System.out.print(" ");
             }
