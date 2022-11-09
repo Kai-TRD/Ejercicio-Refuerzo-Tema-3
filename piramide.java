@@ -9,7 +9,7 @@ public class piramide {
         Scanner sc = new Scanner(System.in);
         System.out.print("Dime la altura de la piramide: ");
         int altura = sc.nextInt();
-
+        sc.close();
         int ancho = 1;
         int espacio = altura-1;
 
@@ -27,7 +27,7 @@ public class piramide {
             }
             ancho = ancho + 2;
             espacio = espacio - 1;
+        System.out.println();
         }
-        System.out.println("");
     }
 }
