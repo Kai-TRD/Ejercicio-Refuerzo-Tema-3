@@ -5,8 +5,10 @@ public class ejercicio25 {
         Scanner sc = new Scanner(System.in);
         System.out.println("Dime un numero: ");
         int numero = sc.nextInt();
-        while(numero > 4){
-        System.out.println(numero / 10);
+        while(numero > 0){
+
+            System.out.println(numero / 10);
+        
         }
     }
 }
