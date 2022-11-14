@@ -1,5 +1,4 @@
 import java.util.Scanner;
-
 public class MenuFrase_KailuoWang {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -8,6 +7,7 @@ public class MenuFrase_KailuoWang {
         boolean salir = false;
         String frase = "";
         String enter = "";
+        String posicion = "";
         int cantidadCaracter = 0;
         do{
             System.out.println("Opcion a - Añadir a la frase (añadiendo a la frase ya existente)");
@@ -35,7 +35,7 @@ public class MenuFrase_KailuoWang {
                     break;
 
                 case "c":
-                    System.out.println((frase.split(" ").length)-1);
+                    System.out.println("La frase actual contiene: " + ((frase.split(" ").length)-1)+ "palabras");
 
                     System.out.print("Pulse la tecla ENTER para continuar....");
                     enter = sc.nextLine();
@@ -44,16 +44,22 @@ public class MenuFrase_KailuoWang {
                 case "d":
                 System.out.print("¿que caracter deseas contar? ");
                 String caracter = sc.nextLine();
-                
-                for (int i = 0; i < frase.length(); i++)
+
+                    String caracterMinus = caracter.toLowerCase();
+                    String fraseMinus = frase.toLowerCase(); 
+
+                for (int i = 0; i < fraseMinus.length() ; i++)
                 {   
-                    if(frase.charAt(i)== caracter.charAt(0) )
+                    if(fraseMinus.charAt(i)== caracterMinus.charAt(0) )
                     {
                         cantidadCaracter ++;
+                        posicion = posicion + i + ",";
                     }
-                }                    
-                System.out.println("Se repiten "+cantidadCaracter+ "veces");
+                }
+                System.out.println("Se repiten "+cantidadCaracter+ " veces");
+                System.out.println("Estando en las posiciones "+posicion);
                 cantidadCaracter = 0;
+                posicion = "";
                     System.out.print("Pulse la tecla ENTER para continuar....");
                     enter = sc.nextLine();
                     break;
