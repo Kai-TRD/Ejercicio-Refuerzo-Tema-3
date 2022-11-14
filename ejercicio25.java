@@ -10,5 +10,6 @@ public class ejercicio25 {
             System.out.println(numero / 10);
         
         }
+    sc.close();
     }
 }

@@ -1,6 +1,4 @@
 import java.util.Scanner;
-
-import javax.swing.SpinnerDateModel;
 public class ejercicio20 {
     public static void main(String[] args) {
         /*     +

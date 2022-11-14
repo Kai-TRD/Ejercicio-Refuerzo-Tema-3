@@ -5,8 +5,10 @@ public class MenuFrase_KailuoWang {
         Scanner sc = new Scanner(System.in);
 
         String opcion = "";
+        boolean salir = false;
         String frase = "";
         String enter = "";
+        int cantidadCaracter = 0;
         do{
             System.out.println("Opcion a - Añadir a la frase (añadiendo a la frase ya existente)");
             System.out.println("Opcion b - Indicar la ultima frase introducida");
@@ -26,56 +28,53 @@ public class MenuFrase_KailuoWang {
                     enter = sc.nextLine();
                     break;
 
-
                 case "b":
                     System.out.println("La frase actualmente es: \""+frase+"\"");
                     System.out.println("Pulse la tecla ENTER para continuar....");
                     enter = sc.nextLine();
                     break;
 
-
                 case "c":
                     System.out.println((frase.split(" ").length)-1);
 
-                    System.out.println("Pulse la tecla ENTER para continuar....");
+                    System.out.print("Pulse la tecla ENTER para continuar....");
                     enter = sc.nextLine();
                     break;
-
-
 
                 case "d":
-                    String caracter = sc.nextLine();
-                    System.out.println(frase.indexOf(caracter));
-
-
-                    System.out.println("Pulse la tecla ENTER para continuar....");
+                System.out.print("¿que caracter deseas contar? ");
+                String caracter = sc.nextLine();
+                
+                for (int i = 0; i < frase.length(); i++)
+                {   
+                    if(frase.charAt(i)== caracter.charAt(0) )
+                    {
+                        cantidadCaracter ++;
+                    }
+                }                    
+                System.out.println("Se repiten "+cantidadCaracter+ "veces");
+                cantidadCaracter = 0;
+                    System.out.print("Pulse la tecla ENTER para continuar....");
                     enter = sc.nextLine();
                     break;
 
-
-
-                case "e": System.out.println("e");
-
-
-
-                    System.out.println("Pulse la tecla ENTER para continuar....");
-                    enter = sc.nextLine();
+                case "e":
+                    frase = "";
+                    System.out.println("Se ha limpiado la frase");
+                    System.out.print("Pulse la tecla ENTER para continuar....");
+                    enter = sc.nextLine(); 
                     break;
 
-
-
-                case "s": System.out.println("s");
-                
-                
-                
-                    System.out.println("Pulse la tecla ENTER para continuar....");
-                    enter = sc.nextLine();
-                    opcion = "s";
+                case "s": 
+                    System.out.println("Hasta la proxima");
+                    System.out.print("Pulse la tecla ENTER para continuar....");
+                    enter = sc.nextLine(); enter = "";
+                    salir = true;
 
                     break;
             }
-        } while (opcion != "s");
-        System.out.println("Hasta la proxima");
-
+        } while (salir == false);
+        sc.close();
+        System.out.println(enter);
     }
 }

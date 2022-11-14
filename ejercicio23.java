@@ -11,21 +11,21 @@ public class ejercicio23 {
         maximo = numeroNuevo;
         minimo = numeroNuevo;
 
-        int numeroNuevo = (int)(Math.random()*1000);
+        int numeroNuevo1 = (int)(Math.random()*1000);
         
         
         do {
-        int numeroNuevo = (int)(Math.random()*1000);
+        int numeroNuevo2 = (int)(Math.random()*1000);
 
         if (cantidadNumero == 0) 
         {
-            maximo = numeroNuevo;
-            minimo = numeroNuevo;
+            maximo = numeroNuevo1;
+            minimo = numeroNuevo2;
         }
         else
         {
-            maximo = Math.max(maximo, numeroNuevo);
-            minimo = Math.min(minimo, numeroNuevo);
+            maximo = Math.max(maximo, numeroNuevo1);
+            minimo = Math.min(minimo, numeroNuevo2);
         }
 
         } while (sumaTotal < 1000);

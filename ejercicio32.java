@@ -25,5 +25,6 @@ public class ejercicio32 {
         }
 
         System.out.println("Suma de los dígitos pares: "+suma);
+        sc.close();
     }    
 }

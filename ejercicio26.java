@@ -30,5 +30,7 @@ public class ejercicio26 {
             posicionActual++;
         }
         System.out.println("El digito" + digitoBuscado + " esta en el numero: "+ numero + " en las posiciones " + posicionActual);
+        System.out.println(apariciones);
+        sc.close();
     }
 }
