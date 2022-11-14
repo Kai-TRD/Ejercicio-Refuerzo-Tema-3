@@ -77,5 +77,6 @@ public class MenuFrase_KailuoWang {
         } while (salir == false);
         sc.close();
         System.out.println(enter);
+        
     }
 }
