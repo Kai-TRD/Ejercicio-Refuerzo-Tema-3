@@ -24,61 +24,56 @@ public class MenuFrase_KailuoWang {
                     System.out.println("Introducir a la frase:");
                     String introducirFrase = sc.nextLine();
                     frase = frase + " " + introducirFrase;
-                    System.out.println("Pulse la tecla ENTER para continuar....");
-                    enter = sc.nextLine();
+
                     break;
 
                 case "b":
                     System.out.println("La frase actualmente es: \""+frase+"\"");
-                    System.out.println("Pulse la tecla ENTER para continuar....");
-                    enter = sc.nextLine();
+
                     break;
 
                 case "c":
                     System.out.println("La frase actual contiene: " + ((frase.split(" ").length)-1)+ "palabras");
 
-                    System.out.print("Pulse la tecla ENTER para continuar....");
-                    enter = sc.nextLine();
                     break;
 
                 case "d":
-                System.out.print("¿que caracter deseas contar? ");
-                String caracter = sc.nextLine();
+                        System.out.print("¿que caracter deseas contar? ");
+                        String caracter = sc.nextLine();
 
-                    String caracterMinus = caracter.toLowerCase();
-                    String fraseMinus = frase.toLowerCase(); 
+                            String caracterMinus = caracter.toLowerCase();
+                            String fraseMinus = frase.toLowerCase(); 
 
-                for (int i = 0; i < fraseMinus.length() ; i++)
-                {   
-                    if(fraseMinus.charAt(i)== caracterMinus.charAt(0) )
-                    {
-                        cantidadCaracter ++;
-                        posicion = posicion + i + ",";
-                    }
-                }
+                        for (int i = 0; i < fraseMinus.length() ; i++)
+                        {   
+                            if(fraseMinus.charAt(i) == caracterMinus.charAt(0) )
+                            {
+                                cantidadCaracter ++;
+                                posicion = posicion + i + ",";
+                            }
+                        }
                 System.out.println("Se repiten "+cantidadCaracter+ " veces");
-                System.out.println("Estando en las posiciones "+posicion);
-                cantidadCaracter = 0;
-                posicion = "";
-                    System.out.print("Pulse la tecla ENTER para continuar....");
-                    enter = sc.nextLine();
+                    System.out.println("Estando en las posiciones: "+posicion);
+                
+                    cantidadCaracter = 0;
+                    posicion = "";
+
                     break;
 
                 case "e":
                     frase = "";
                     System.out.println("Se ha limpiado la frase");
-                    System.out.print("Pulse la tecla ENTER para continuar....");
-                    enter = sc.nextLine(); 
+
                     break;
 
                 case "s": 
-                    System.out.println("Hasta la proxima");
-                    System.out.print("Pulse la tecla ENTER para continuar....");
-                    enter = sc.nextLine(); enter = "";
                     salir = true;
-
+                    System.out.println("Hasta la proxima");
                     break;
-            }
+                }
+                System.out.print("Pulse la tecla ENTER para continuar....");
+                enter = sc.nextLine(); enter = "";
+
         } while (salir == false);
         sc.close();
         System.out.println(enter);
