@@ -33,7 +33,7 @@ public class MenuFrase_KailuoWang {
                     break;
 
                 case "c":
-                    System.out.println("La frase actual contiene: " + ((frase.split(" ").length)-1)+ " palabra/s");
+                    System.out.println("La frase actual contiene: " + ((frase.split(" ").length)-1)+ " palabra/s"); 
 
                     break;
 
