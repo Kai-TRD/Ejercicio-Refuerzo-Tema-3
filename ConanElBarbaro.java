@@ -12,7 +12,7 @@ public class ConanElBarbaro {
             String armaConan = "";
         
         //*******Zombies**********
-            int numeroZombies = (int)(Math.random()*6+5);
+
 
 
         //*******ARMAS**********
@@ -25,9 +25,9 @@ public class ConanElBarbaro {
             //Espada corta y escudo
             final int atkEspadaMasEscudo = 30;
             final int defEspadaMasEscudo = 70;
-        String volverAJugar = "s";
+        Boolean volverAJugar = true;
         do {
-
+            volverAJugar = true;
             System.out.println(" ===============================");
             System.out.println("||   Escoje tu arma            ||");
             System.out.println(" ===============================");
@@ -61,8 +61,8 @@ public class ConanElBarbaro {
             System.out.println("El arma elegida es: " + armaConan);
 
 
-
-            System.out.println(numeroZombies);
+            int numeroZombies = (int)(Math.random()*6+5);
+            System.out.println("Hay "+numeroZombies+" Zombies");
             System.out.println(" =========================");
             System.out.println("|| BATALLA               ||");
             System.out.println(" =========================");
@@ -111,15 +111,21 @@ public class ConanElBarbaro {
                 else
                 if(vidaAhoraConan <= 0){
                     System.out.println("Conan ha muerto!");
+                    System.out.println(" _______________");
+                    System.out.println("|               |");
+                    System.out.println("|   GAME OVER   |");
+                    System.out.println(" _______________");
                 }
 
                 System.out.print("¿Quieres volver a jugar?(s/n): ");
                 sc.next();
-                volverAJugar = sc.nextLine();
+                String preguntaVolverAjugar = sc.nextLine();
+                if (preguntaVolverAjugar.equals("n")){volverAJugar = false;};
 
-        }while(volverAJugar == "s");
+        }while(volverAJugar == true);
             
         
 
     }
 }
+
