@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class ConanElBarbaro {
+public class ConanElBarbarocopy {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
@@ -12,7 +12,7 @@ public class ConanElBarbaro {
             String armaConan = "";
         
         //*******Zombies**********
-            int numeroZombies = (int)(Math.random()*6+5);
+
 
 
         //*******ARMAS**********
@@ -25,8 +25,13 @@ public class ConanElBarbaro {
             //Espada corta y escudo
             final int atkEspadaMasEscudo = 30;
             final int defEspadaMasEscudo = 70;
-        String volverAJugar = "s";
+            boolean repetirPartida = true;
+      
+      
         do {
+
+            int numeroZombies = (int)(Math.random()*6+5);
+
 
             System.out.println(" ===============================");
             System.out.println("||   Escoje tu arma            ||");
@@ -62,64 +67,55 @@ public class ConanElBarbaro {
 
 
 
-            System.out.println(numeroZombies);
-            System.out.println(" =========================");
-            System.out.println("|| BATALLA               ||");
-            System.out.println(" =========================");
+
+                System.out.println(" =========================");
+                System.out.println("|| BATALLA               ||");
+                System.out.println(" =========================");
+                boolean zombieMuerto = false;
+                boolean conanMuerto = false;
+                final int VIDAZOMBIE = 1;
                 final int DEFZOMBIE = 70;
                 final int ATKZOMBIIE = 50;
-                int sumaZombie = 1;
 
-                //Combate
-                while (numeroZombies > 0 && vidaAhoraConan > 0) 
-                    {
-                        System.out.println("---------------------Zombie "+sumaZombie);
-                        //Ataca Conan---------------
+            int sumaZombie = 1;
+
+                //Combate 
+                    System.out.println("--------------------------------------------------Zombie---");
+                    
+                    while (vidaAhoraConan > 0 && numeroZombies > 0){
                         double atacaConan = Math.random()*atkConan;
-                        System.out.println("Conan - Ataca - "+(int)atacaConan);
-                        
                         double defiendeZombie = Math.random()*DEFZOMBIE;
+                        double atacaZombie = Math.random()*ATKZOMBIIE;
+                        double defiendeConan = Math.random()*defConan;
+
+
+                        System.out.println("Conan - Ataca - "+(int)atacaConan);
                         System.out.println("Zombie - Defiende - "+(int)defiendeZombie);
-                        
+
                         if (atacaConan > defiendeZombie){
-                            System.out.println("---Conan mató al zombie---");
+                            System.out.println("---Zombie muerte---");
                             numeroZombies--;
                             sumaZombie++;
-                        } 
+                        }
                         else
-                        if (defiendeZombie > atacaConan){
-                            System.out.println("---Zombie se defensio---");
-                            double atacaZombie = Math.random()*ATKZOMBIIE;
+                        {
+                        
                             System.out.println("Zombie - Ataca - "+(int)atacaZombie);
-
-                            double defiendeConan = Math.random()*defConan;
                             System.out.println("Conan - Defiende - "+(int)defiendeConan);
-
-                            if (atacaZombie < defiendeConan){
-                                System.out.println("---Conan se defendio---");
-                            }
-                            if (defiendeConan < atacaZombie){
-                                System.out.println("^^^^Conan recivio daño^^^^");
+                        
+                            if(atacaZombie > defiendeConan){
+                                System.out.println("---Conan recibe daño---");
                                 vidaAhoraConan--;
-                                System.out.println("---------------------------Vida de conan "+vidaAhoraConan);
+                                System.out.println("Conan tiene ahora "+vidaAhoraConan+" de vida");
+                                if (vidaAhoraConan <= 0){conanMuerto = true;}
                             }
                         }
                     }
-                if(vidaAhoraConan > 0){
-                    System.out.println("Conan consiguio el tesoro!");
-                } 
-                else
-                if(vidaAhoraConan <= 0){
-                    System.out.println("Conan ha muerto!");
-                }
 
-                System.out.print("¿Quieres volver a jugar?(s/n): ");
-                sc.next();
-                volverAJugar = sc.nextLine();
+            String volverAJugar = sc.nextLine();
 
-        }while(volverAJugar == "s");
-            
-        
-
+            if (volverAJugar == "S" || volverAJugar == "s"){repetirPartida = true;}
+            if (volverAJugar == "N" || volverAJugar == "n"){repetirPartida = false;}
+        }while(repetirPartida == true);
     }
 }
