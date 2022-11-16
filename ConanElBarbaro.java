@@ -10,7 +10,9 @@ public class ConanElBarbaro {
             int atkConan = 0;
             int defConan = 0;
             String armaConan = "";
-        
+            int partidasGanadas = 0;
+            int partidasPerdidas = 0;
+
         //*******Zombies**********
 
 
@@ -106,10 +108,27 @@ public class ConanElBarbaro {
                         }
                     }
                 if(vidaAhoraConan > 0){
+                    partidasGanadas++;
                     System.out.println("Conan consiguio el tesoro!");
+                    System.out.println("-------------------------------------");
+                    System.out.println("⠀⠀⠀⠀⠀⠰⠿⠿⠿⢿⣿⣷⣶⣶⣶⣦⣤⣤⣤⣤⣀⣀⣀⣀⠀⠀⠀⠀⠀⠀");
+                    System.out.println("⠀⠀⠀⠀⠀⢰⣶⣦⠀⣶⣤⣤⣤⣤⣍⣉⣉⣉⡙⠛⠛⠛⠛⠏⣰⣿⡆⠀⠀⠀");
+                    System.out.println("⠀⠀⠀⠀⠀⠀⢿⡿⢠⣿⣿⣿⣿⣿⣿⣿⣿⠻⣿⣿⣿⣿⣿⣆⠸⣿⡇⠀⠀⠀");
+                    System.out.println("⠀⠀⠀⠀⠀⠀⠘⡇⢸⣿⣿⣿⣿⣿⣿⣿⡏⠀⠹⠟⠙⣿⣿⣿⠄⢻⡇⠀⠀⠀");
+                    System.out.println("⠀⠀⠀⠀⠀⠀⠀⠀⠊⣉⡉⢋⣩⡉⠻⠛⠁⣾⣀⣴⡀⢛⡉⢠⣷⠈⠇⠀⠀⠀");
+                    System.out.println("⠀⠀⠀⠀⠀⠀⠀⣠⣼⣿⣿⣿⣿⣿⣷⣿⠀⢿⣿⣿⣿⡿⢁⠚⠛⠃⠀⠀⠀⠀");
+                    System.out.println("⠀⠀⠀⠀⠀⠤⠾⠿⣿⡿⠛⣿⣿⣿⣿⣿⣷⣦⣌⣉⣉⣠⣾⡷⠂⣠⠀⠀⠀⠀");
+                    System.out.println("⠀⠀⠀⣿⢰⣶⣶⣶⣦⠀⠀⣤⣌⣉⠉⣉⡙⠛⠛⠛⠻⠟⢁⣴⣾⣿⠀⠀⠀⠀");
+                    System.out.println("⠀⠀⠀⣿⣆⠻⣿⣿⢇⣸⠀⣯⢉⣿⠀⣿⣿⣿⣿⣿⣷⠀⣿⣿⣿⣿⠀⠀⠀⠀");
+                    System.out.println("⠀⠀⠀⣿⣿⣷⡔⠐⣾⣿⠀⠛⠚⠿⠀⣿⣿⣿⣿⣿⣿⠀⣿⣿⣿⣿⠀⠀⠀⠀");
+                    System.out.println("⠀⠀⠀⣿⣿⣿⣿⣶⣿⣿⣿⣿⣿⣶⣶⣿⣿⣿⣿⣿⣿⠀⣿⣿⣿⣿⠀⠀⠀⠀");
+                    System.out.println("⠀⠀⠀⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠀⣿⣿⠿⠋⠀⠀⠀⠀");
+                    System.out.println("⠀⠀⠰⣦⡄⠀⠀⠈⠉⠉⠉⠉⠛⠛⠛⠛⠻⠿⠿⠿⠿⠀⠛         ");
                 } 
+                
                 else
                 if(vidaAhoraConan <= 0){
+                    partidasPerdidas++;
                     System.out.println("Conan ha muerto!");
                     System.out.println(" _______________");
                     System.out.println("|               |");
@@ -120,7 +139,15 @@ public class ConanElBarbaro {
                 System.out.print("¿Quieres volver a jugar?(s/n): ");
                 sc.next();
                 String preguntaVolverAjugar = sc.nextLine();
-                if (preguntaVolverAjugar.equals("n")){volverAJugar = false;};
+                switch (preguntaVolverAjugar) {
+                    case "n":
+                        volverAJugar = false;
+                        break;
+                
+                    default:
+                        volverAJugar = true;
+                        break;
+                }
 
         }while(volverAJugar == true);
             
