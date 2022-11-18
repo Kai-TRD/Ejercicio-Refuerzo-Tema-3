@@ -28,7 +28,7 @@ public class ConanElBarbaro {
             final int atkEspadaMasEscudo = 30;
             final int defEspadaMasEscudo = 70;
         Boolean volverAJugar = true;
-        do {
+        while(volverAJugar == true){
             volverAJugar = true;
             System.out.println(" ===============================");
             System.out.println("||   Escoje tu arma            ||");
@@ -42,6 +42,7 @@ public class ConanElBarbaro {
             System.out.println(" ===============================");
             System.out.print("Selecciona una de las opciones: ");
             int elegirArma = sc.nextInt();
+            sc.nextLine();
             switch (elegirArma){
                 case 1: 
                     atkConan = atkEspada2Manos;
@@ -68,6 +69,8 @@ public class ConanElBarbaro {
             System.out.println(" =========================");
             System.out.println("|| BATALLA               ||");
             System.out.println(" =========================");
+            System.out.println("   Partidas ganadas: "+partidasGanadas);
+            System.out.println("   Partidas perdidas: "+partidasPerdidas);
                 final int DEFZOMBIE = 70;
                 final int ATKZOMBIIE = 50;
                 int sumaZombie = 1;
@@ -135,24 +138,11 @@ public class ConanElBarbaro {
                     System.out.println("|   GAME OVER   |");
                     System.out.println(" _______________");
                 }
-
                 System.out.print("¿Quieres volver a jugar?(s/n): ");
-                sc.next();
                 String preguntaVolverAjugar = sc.nextLine();
-                switch (preguntaVolverAjugar) {
-                    case "n":
-                        volverAJugar = false;
-                        break;
-                
-                    default:
-                        volverAJugar = true;
-                        break;
-                }
-
-        }while(volverAJugar == true);
-            
-        
-
+                if (preguntaVolverAjugar.equals("n")){volverAJugar = false;}
+        }
+        sc.close();
     }
 }
 
