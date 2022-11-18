@@ -31,6 +31,7 @@ public class piramideDeLetras {
                 for (int k = 0; k < i; k++) {
                     System.out.print(cortarLetras/*[k]*/);
                     cortarLetras++;
+                    if (cortarLetras>90){cortarLetras=65;}
                 }
             System.out.println();
         }
