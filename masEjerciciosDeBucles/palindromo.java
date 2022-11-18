@@ -35,5 +35,6 @@ public class palindromo {
             }
             frase = "SALIR";
         } while (!frase.toUpperCase().equals("SALIR"));
+        sc.close();
     }
 }
