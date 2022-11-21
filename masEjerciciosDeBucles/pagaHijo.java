@@ -14,7 +14,7 @@ public class pagaHijo {
         float dineroActual = 0f;
         float dineroAhorrado = 0;
 
-        while (dineroAhorrado <= PRECIOBICI){
+        while (dineroAhorrado < PRECIOBICI){
             numeroSemana++;
             System.out.println("Semana " + numeroSemana + ": " + dineroActual + " €");
             dineroActual = dineroSemanaMult * 2;
