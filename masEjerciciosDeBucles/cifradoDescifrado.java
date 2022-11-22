@@ -8,7 +8,11 @@ public class cifradoDescifrado {
             Modifica el programa anterior para que aparezca un menú donde podremos elegir cifrar, descifrar y salir.
         */
         Scanner sc = new Scanner(System.in);
-
+        int opciones = 0;
+        String enter = "";
+        do {
+            
+        
             System.out.println("===============================");
             System.out.println("  Eligue una de las opciones:");
             System.out.println("  ---------------------------");
@@ -16,8 +20,7 @@ public class cifradoDescifrado {
             System.out.println("   2 - Descifrar");
             System.out.println("   3 - Salir");
             System.out.println("===============================");
-            sc.nextInt();
-            int opciones = sc.nextInt();
+            opciones = sc.nextInt();
 
             switch (opciones){
             
@@ -42,36 +45,56 @@ public class cifradoDescifrado {
                         contador++;
                     }
                     System.out.println();
+                    System.out.println("================================");
+                    enter = sc.nextLine();
                 break;
 
                 case 2:
-                sc.nextLine();
                 System.out.println("Escrieme un texto para descifrar:");
-                String textodescifrar = sc.nextLine();
-                
-                caracteresTexto = textodescifrar.length();
-                contador = 1;
+                sc.nextLine();
+                texto = sc.nextLine();
+                System.out.print("El factor de descifrado es: ");
+            
+
+                char[] caracteresdes =texto.toCharArray();
+                factor =  Character.getNumericValue(caracteresdes[0]);  
+                System.out.println(factor);
+                caracteresTexto = texto.length();
+                contador = 0;
+
+
+
                 System.out.println("================================");
-
-                char[] caracteresDescifrar =textodescifrar.toCharArray();
-
-                while(contador < caracteresTexto){
-                    int factorDescifrado = caracteresDescifrar[0];
-                    int descifrado = (int)(caracteresDescifrar[contador])-factorDescifrado;
-                    char descifradoCaracter = (char)descifrado;
-                    System.out.print(descifradoCaracter);
-                    contador++;
+                while(contador < caracteresTexto-1){
                     
-                break;
+                    
+                    int cifrado = (int)(caracteresdes[contador+1])-factor;
+                    char cifradoCaracter = (char)cifrado;
+                    System.out.println("Caracter: "+ caracteresdes[contador+1] + " --- " + cifradoCaracter + "("+ (int)cifradoCaracter +")");
+                    contador++;
+                }
+                System.out.println("================================");
+            
+            
+            
+                contador = 0;
+                System.out.print("\t");
+                while(contador < caracteresTexto-1){
+                    
+                    int cifrado = (int)(caracteresdes[contador+1])-factor;
+                    char cifradoCaracter = (char)cifrado;
+
+                    System.out.print(cifradoCaracter);
 
 
-
-
-
-
-
+                    contador++;
+                }
+                System.out.println();
+                System.out.println("================================");
             }
+            enter = sc.nextLine();
+        }while (opciones != 3);
         sc.close();
-        }
     }
 }
+
