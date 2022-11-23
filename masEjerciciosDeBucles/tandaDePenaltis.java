@@ -1,3 +1,4 @@
+package masEjerciciosDeBucles;
 import java.util.Scanner;
 
 public class tandaDePenaltis {
@@ -54,7 +55,7 @@ public class tandaDePenaltis {
             if (defensaCPU == internDireccion){
 
                 int probFueraPenalti = (int)((Math.random()*99)+1);
-                System.out.println("fuera penalti------------------------------------"+ probFueraPenalti);
+                //System.out.println("fuera penalti------------------------------------"+ probFueraPenalti);
                 if(probFueraPenalti<=20){
                     System.out.println("-FUERA PENALTI-");
                 
@@ -77,7 +78,7 @@ public class tandaDePenaltis {
             System.out.print(nombre + " "+ "\t" + puntuacionJugador);
             for (int i = 0; i < 5-valorMenosJugador; i++) {
                 System.out.print("-");
-            }
+            }   
             System.out.println();
             System.out.print("CPU "+ "\t" + puntuacionCPU);
             for (int i = 0; i < 5-valorMenosCPU; i++) {
@@ -104,7 +105,7 @@ public class tandaDePenaltis {
             if (defensaCPU == internDireccion){
 
                 int probFueraPenalti = (int)((Math.random()*99)+1);
-                System.out.println("----------------------------------------------------------------------"+ probFueraPenalti);
+                //System.out.println("----------------------------------------------------------------------"+ probFueraPenalti);
                 if(probFueraPenalti<=20){
                     System.out.println("-FUERA PENALTI-");
                     
@@ -156,5 +157,6 @@ public class tandaDePenaltis {
         }
         System.out.println("("+numGolCPU+")");
         System.out.println();
+        sc.close();
     }
 }
