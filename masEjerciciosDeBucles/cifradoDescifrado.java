@@ -94,6 +94,8 @@ public class cifradoDescifrado {
             }
             enter = sc.nextLine();
         }while (opciones != 3);
+        enter = "";
+        System.out.println(enter);
         sc.close();
     }
 }
