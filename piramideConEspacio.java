@@ -38,6 +38,7 @@ public class piramideConEspacio {
         for (int i = 0; i <= altura+altura - 2; i++) {
             System.out.print("*");
         }
+        
         System.out.println();
     }
 }
