@@ -1,48 +1,47 @@
 import java.util.Scanner;
 
 public class ConanElBarbaro {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
+    static Scanner sc = new Scanner(System.in);
+
+    // static final int ATAQUE_ESPADA = 80;
 
         //************ASIGNACIONES**************
             //Vida de Conan
-            final int VIDACONAN = 4;
-            int atkConan = 0;
-            int defConan = 0;
-            String armaConan = "";
-            int partidasGanadas = 0;
-            int partidasPerdidas = 0;
+            static final int VIDACONAN = 4;
+            static int atkConan = 0;
+            static int defConan = 0;
+            static String armaConan = "";
+            static int partidasGanadas = 0;
+            static int partidasPerdidas = 0;
 
         //*******Zombies**********
-
-
+        static int numeroZombies = (int)(Math.random()*6+5);
+        static final int DEFZOMBIE = 70;
+        static final int ATKZOMBIIE = 50;
+        static int sumaZombie = 1;
 
         //*******ARMAS**********
             //Espada de 2 manos
-            final int atkEspada2Manos = 60;
-            final int defEspada2Manos = 40;
+            static final int atkEspada2Manos = 60;
+            static final int defEspada2Manos = 40;
             //Hacha
-            final int atkHacha =70;
-            final int defHacha =30;
+            static final int atkHacha =70;
+            static final int defHacha =30;
             //Espada corta y escudo
-            final int atkEspadaMasEscudo = 30;
-            final int defEspadaMasEscudo = 70;
+            static final int atkEspadaMasEscudo = 30;
+            static final int defEspadaMasEscudo = 70;
+
+
+        
+    public static void main(String[] args) {
+
         Boolean volverAJugar = true;
+
         while(volverAJugar == true){
             volverAJugar = true;
-            System.out.println(" ===============================");
-            System.out.println("||   Escoje tu arma            ||");
-            System.out.println(" ===============================");
-            System.out.println("|| 1. Espada de dos manos      ||");
-            System.out.println("||     atk:"+atkEspada2Manos+"   def:"+defEspada2Manos+"         ||");
-            System.out.println("|| 2. Hacha                    ||");
-            System.out.println("||     atk:"+atkHacha+"   def:"+defHacha+"         ||");
-            System.out.println("|| 3. Espada corta con escudo  ||");
-            System.out.println("||     atk:"+atkEspadaMasEscudo+"   def:"+defEspadaMasEscudo+"         ||");
-            System.out.println(" ===============================");
-            System.out.print("Selecciona una de las opciones: ");
-            int elegirArma = sc.nextInt();
-            sc.nextLine();
+
+            int elegirArma = menu();
+
             switch (elegirArma){
                 case 1: 
                     atkConan = atkEspada2Manos;
@@ -64,51 +63,78 @@ public class ConanElBarbaro {
             System.out.println("El arma elegida es: " + armaConan);
 
 
-            int numeroZombies = (int)(Math.random()*6+5);
             System.out.println("Hay "+numeroZombies+" Zombies");
             System.out.println(" =========================");
             System.out.println("|| BATALLA               ||");
             System.out.println(" =========================");
             System.out.println("   Partidas ganadas: "+partidasGanadas);
             System.out.println("   Partidas perdidas: "+partidasPerdidas);
-                final int DEFZOMBIE = 70;
-                final int ATKZOMBIIE = 50;
-                int sumaZombie = 1;
+
 
                 //Combate
                 while (numeroZombies > 0 && vidaAhoraConan > 0) 
                     {
-                        System.out.println("---------------------Zombie "+sumaZombie);
-                        //Ataca Conan---------------
-                        double atacaConan = Math.random()*atkConan;
-                        System.out.println("Conan - Ataca - "+(int)atacaConan);
                         
-                        double defiendeZombie = Math.random()*DEFZOMBIE;
-                        System.out.println("Zombie - Defiende - "+(int)defiendeZombie);
+
+
+
+                        //Conan ataca
+                        // int resultadoAtaque = ataque(atkConan, DEFZOMBIE, "C");
                         
-                        if (atacaConan > defiendeZombie){
-                            System.out.println("---Conan mató al zombie---");
-                            numeroZombies--;
-                            sumaZombie++;
-                        } 
-                        else
-                        if (defiendeZombie > atacaConan){
-                            System.out.println("---Zombie se defensio---");
-                            double atacaZombie = Math.random()*ATKZOMBIIE;
-                            System.out.println("Zombie - Ataca - "+(int)atacaZombie);
+                        // if (resultadoAtaque == 1)
+                        // {
+                        //     //ataque ha ganado --> zombi muere
+                        // }
+                        // else if (resultadoAtaque == -1)
+                        // {
+                        //     //pifia - conan pierde 1 vida
+                        // }
+                        // else //resultadoAtaque = 0
+                        // {
+                        //     //no he matado al zombie
 
-                            double defiendeConan = Math.random()*defConan;
-                            System.out.println("Conan - Defiende - "+(int)defiendeConan);
+                        //     int resultadoAtaqueZombi = ataque(ATKZOMBIIE, defConan, "Z");
 
-                            if (atacaZombie < defiendeConan){
-                                System.out.println("---Conan se defendio---");
-                            }
-                            if (defiendeConan < atacaZombie){
-                                System.out.println("^^^^Conan recivio daño^^^^");
-                                vidaAhoraConan--;
-                                System.out.println("---------------------------Vida de conan "+vidaAhoraConan);
-                            }
-                        }
+                        //     if (resultadoAtaqueZombi == 1)
+                        //     {
+                        //         //Conan pierde una vida
+                        //     }
+                        //     else 
+                        //     {
+                        //         //conan se ha defendido bien
+                        //     }
+
+                        // }
+                        
+
+
+
+
+                        // turnoConan();
+                        // int[] atacaConan = turnoConan();
+                        // int[] defiendeZombie = turnoConan();
+
+                        // if (atacaConan[0] > defiendeZombie[1]){
+                        //     System.out.println("---Conan mató al zombie---");
+                        //     numeroZombies--;
+                        //     sumaZombie++;
+                        // } 
+                        // else
+                        // if (defiendeZombie[1] > atacaConan[0]){
+
+                        //     turnoZombie();
+                        //     int[] atacaZombie = turnoZombie();
+                        //     int[] defiendeConan = turnoZombie();
+
+                        //     if (atacaZombie[0] < defiendeConan[1]){
+                        //         System.out.println("---Conan se defendio---");
+                        //     }
+                        //     if (defiendeConan[1] < atacaZombie[0]){
+                        //         System.out.println("^^^^Conan recivio daño^^^^");
+                        //         vidaAhoraConan--;
+                        //         System.out.println("---------------------------Vida de conan "+vidaAhoraConan);
+                        //     }
+                        // }
                     }
                 if(vidaAhoraConan > 0){
                     partidasGanadas++;
@@ -139,10 +165,86 @@ public class ConanElBarbaro {
                     System.out.println(" _______________");
                 }
                 System.out.print("¿Quieres volver a jugar?(s/n): ");
+                sc.nextLine();
                 String preguntaVolverAjugar = sc.nextLine();
+
                 if (preguntaVolverAjugar.equals("n")){volverAJugar = false;}
+                
         }
         sc.close();
     }
-}
 
+
+
+
+    // FUNCIONES
+    static int menu(){
+            System.out.println(" ===============================");
+            System.out.println("||   Escoje tu arma            ||");
+            System.out.println(" ===============================");
+            System.out.println("|| 1. Espada de dos manos      ||");
+            System.out.println("||     atk:"+ atkEspada2Manos +"   def:"+defEspada2Manos+"         ||");
+            System.out.println("|| 2. Hacha                    ||");
+            System.out.println("||     atk:"+atkHacha+"   def:"+defHacha+"         ||");
+            System.out.println("|| 3. Espada corta con escudo  ||");
+            System.out.println("||     atk:"+atkEspadaMasEscudo+"   def:"+defEspadaMasEscudo+"         ||");
+            System.out.println(" ===============================");
+            System.out.print("Selecciona una de las opciones: ");
+    
+            int elegirArma = sc.nextInt();
+        return elegirArma;
+    }
+
+
+    
+    static int[] ataque(){
+
+        int[] acciones = {0 , 0};
+
+        System.out.println("---------------------Zombie "+sumaZombie);
+        //Ataca Conan---------------
+        int atacaConan = (int)(Math.random()*atkConan);
+        System.out.println("Conan - Ataca - "+atacaConan);
+        acciones[0] = atacaConan;
+        //Defiende zombie---------------
+        int defiendeZombie = (int)(Math.random()*DEFZOMBIE);
+        System.out.println("Zombie - Defiende - "+defiendeZombie);
+        acciones[1] = defiendeZombie;
+        return acciones;
+    }
+
+
+
+    static int[] turnoConan(){
+
+        int[] acciones = {0 , 0};
+
+        System.out.println("---------------------Zombie "+sumaZombie);
+        //Ataca Conan---------------
+        int atacaConan = (int)(Math.random()*atkConan);
+        System.out.println("Conan - Ataca - "+atacaConan);
+        acciones[0] = atacaConan;
+        //Defiende zombie---------------
+        int defiendeZombie = (int)(Math.random()*DEFZOMBIE);
+        System.out.println("Zombie - Defiende - "+defiendeZombie);
+        acciones[1] = defiendeZombie;
+        return acciones;
+    }
+
+
+
+    static int[] turnoZombie(){
+
+        int[] acciones = {0 , 0};
+
+        System.out.println("---Zombie se defendio---");
+        int atacaZombie = (int)(Math.random()*ATKZOMBIIE);
+        System.out.println("Zombie - Ataca - "+atacaZombie);
+        acciones[0] = atacaZombie;
+        int defiendeConan = (int)(Math.random()*defConan);
+        System.out.println("Conan - Defiende - "+defiendeConan);
+        acciones[1] = defiendeConan;
+        return acciones;
+    
+    }
+}
