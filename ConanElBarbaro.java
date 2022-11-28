@@ -135,6 +135,8 @@ public class ConanElBarbaro {
                         //         System.out.println("---------------------------Vida de conan "+vidaAhoraConan);
                         //     }
                         // }
+                        turnoConan();
+                        turnoZombie();
                     }
                 if(vidaAhoraConan > 0){
                     partidasGanadas++;
